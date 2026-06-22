@@ -2,6 +2,9 @@ package com.neuedu.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -60,4 +63,12 @@ public class Admin implements Serializable {
      * 更新时间
      */
     private LocalDateTime updatedAt;
+
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime createTime;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime updateTime;
+
+    @TableLogic
+    private Integer isDelete;
 }

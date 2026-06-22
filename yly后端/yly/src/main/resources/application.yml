@@ -55,3 +55,10 @@ admin:
 
 allow:
   origin: http://127.0.0.1
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted   # 全局逻辑删除字段名
+      logic-delete-value: 1           # 删除后的值
+      logic-not-delete-value: 0       # 未删除的值
