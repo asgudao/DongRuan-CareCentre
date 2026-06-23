@@ -54,21 +54,11 @@ public class Admin implements Serializable {
      */
     private String adminId;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createdAt;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updatedAt;
-
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createTime;
+    private LocalDateTime createdTime;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime updateTime;
+    private LocalDateTime updatedTime;
 
     @TableLogic
-    private Integer isDelete;
+    private Integer isDeleted;
 }

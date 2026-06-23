@@ -1,5 +1,6 @@
 package com.neuedu.controller;
 
+import com.neuedu.entity.Admin;
 import com.neuedu.entity.Elder;
 import com.neuedu.service.AdminService;
 import com.neuedu.service.ElderService;

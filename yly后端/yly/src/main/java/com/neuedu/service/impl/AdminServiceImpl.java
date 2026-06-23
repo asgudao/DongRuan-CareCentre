@@ -35,13 +35,14 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
                 .or().eq("email", adminname);
         Admin admin = this.getOne(wrapper);
 
-        if (admin == null ||
-                (!passwordEncoder.matches(password, admin.getPassword()) && !password.equals(admin.getPassword()))) {
+        if (admin == null || !password.equals(admin.getPassword())) {
             throw new NeueduException("用户名或密码错误");
         }
 
+        // 只存储用户ID，不存储整个对象
         String redisKey = String.format("admin:login:%d", admin.getId());
-        redisTemplate.opsForValue().set(redisKey, admin, 30, TimeUnit.MINUTES);
+        redisTemplate.opsForValue().set(redisKey, admin.getId().toString(), 30, TimeUnit.MINUTES);
+
         return JwtUtil.createToken(admin);
     }
 }

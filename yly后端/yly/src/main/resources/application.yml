@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.80.110:3307/yly?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/yly?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: 193156
+    password: 123456
     hikari:
       maximum-pool-size: 20
       minimum-idle: 8
@@ -24,7 +24,7 @@ spring:
 
   data:
     redis:
-      host: 192.168.80.110
+      host: 127.0.0.1
       port: 6379
 
 logging:

@@ -44,10 +44,10 @@ public class Nurse implements Serializable {
     private Byte workStatus;
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createTime;
+    private LocalDateTime createdTime;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime updateTime;
+    private LocalDateTime updatedTime;
 
     @TableLogic
-    private Integer isDelete;
+    private Integer isDeleted;
 }

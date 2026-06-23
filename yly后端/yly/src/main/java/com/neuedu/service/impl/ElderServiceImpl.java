@@ -89,7 +89,7 @@ public class ElderServiceImpl extends ServiceImpl<ElderMapper, Elder> implements
         if(payService.check(request)){
             String outTradeNo=request.getParameter("out_trade_no");
             Elder elder=new Elder();
-            elder.setActive(1);
+            elder.setIsActive(1);
             UpdateWrapper<Elder> wrapper=new UpdateWrapper<>();
             wrapper.eq("out_trade_no",outTradeNo);
             return this.update(elder,wrapper);
